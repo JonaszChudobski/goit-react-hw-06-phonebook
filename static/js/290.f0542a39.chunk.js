@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[290],{7290:function(e,t,a){a.r(t),a.d(t,{default:function(){return o}});a(2791);var c="Home_container__w+u63",n="Home_title__L087v",r=a(184);function o(){return(0,r.jsx)("div",{className:c,children:(0,r.jsx)("h1",{className:n,children:"Contacts App welcome page "})})}}}]);
+//# sourceMappingURL=290.f0542a39.chunk.js.map
