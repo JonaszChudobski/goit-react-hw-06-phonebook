@@ -1,8 +1,8 @@
 import React from 'react';
 import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { selectContact } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContact } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const ContactForm = () => {
     const form = e.target;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
-    const contact = { name: name, phone: number };
+    const contact = { name: name, number: number };
     const isExist = contacts.contacts.find(contact => contact.name === name);
     isExist
       ? alert(`${name} already exists in contacts.`)
@@ -24,7 +24,9 @@ export const ContactForm = () => {
 
   return (
     <form id="form" className={css.form} onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
+      <label className={css.label} htmlFor="name">
+        Name
+      </label>
       <input
         id="name"
         type="text"
@@ -33,7 +35,9 @@ export const ContactForm = () => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-      <label htmlFor="number">Number</label>
+      <label className={css.label} htmlFor="number">
+        Number
+      </label>
       <input
         id="number"
         type="tel"
